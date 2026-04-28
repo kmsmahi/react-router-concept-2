@@ -5,20 +5,29 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import Contact from './components/Contact/Contact.jsx';
 import About from './components/About/About.jsx';
 import Home from './components/Home/Home.jsx';
+import RootLayer from './components/RootLayer/RootLayer.jsx';
 const router=createBrowserRouter([
   {
     path:'/',
-    element:<Home></Home>
-  },
-  {
-    path:'/contact',
-    element:<Contact></Contact>
-  },
-  {
-    path:'/about',
-    element:<About></About>
-  }
+    element:<RootLayer></RootLayer>,
+    children:[
 
+        {
+           index:true,
+           element:<Home></Home>
+        },
+        {
+           path:'/contact',
+           element:<Contact></Contact>
+        },
+        {
+           path:'/about',
+           element:<About></About>
+        }
+      
+    ]
+  
+  }
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>

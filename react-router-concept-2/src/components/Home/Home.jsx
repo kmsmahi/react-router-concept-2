@@ -1,14 +1,20 @@
-import React from 'react';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import { useEffect, useState } from "react";
+
 
 const Home = () => {
+    const [plants,setPlants]=useState([]);
+    useEffect(()=>{
+        fetch('https://openapi.programming-hero.com/api/plants')
+        .then(res=>res.json())
+        .then(data=>setPlants(data.plants))
+    },[]);
+    console.log(plants);
     return (
         <div>
-           <Navbar></Navbar>
-              <h1>Home Page</h1>
+           
+              <p>Plant Cards</p>
 
-            <Footer></Footer>
+            
         </div>
     );
 };
