@@ -14,7 +14,11 @@ const router=createBrowserRouter([
 
         {
            index:true,
-           element:<Home></Home>
+           element:<Home></Home>,
+          loader: async()=>{
+            const res=await fetch('https://openapi.programming-hero.com/api/plants');
+            return res.json();
+          }
         },
         {
            path:'/contact',
