@@ -6,13 +6,6 @@ import { useLoaderData } from "react-router";
 const Home = () => {
     const { plants } = useLoaderData();
     console.log(plants);
-    // const [plants,setPlants]=useState([]);
-    // useEffect(()=>{
-    //     fetch('https://openapi.programming-hero.com/api/plants')
-    //     .then(res=>res.json())
-    //     .then(data=>setPlants(data.plants))
-    // },[]);
-    // console.log(plants);
     return (
         <div>
            
